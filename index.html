@@ -3,127 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Farel Luther Siagian</title>
+    <title>Portfolio Farel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Portofolio</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Tentang Saya</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+    <!-- Background dengan efek neon -->
+    <div class="neon-background"></div>
+    
+    <!-- Animasi rumus matematika dan fisika -->
+    <div id="floating-formulas"></div>
+    
+    <!-- Partikel interaktif -->
+    <div id="particles"></div>
+    
+    <!-- Navigasi -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">PORTOFOLIO</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#biodata" class="nav-link">Biodata</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#kontak" class="nav-link">Kontak</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <section id="home" class="hero">
+    <!-- Bagian Home/Perkenalan -->
+    <section id="home" class="section home-section">
         <div class="container">
-            <h1>Halo, Saya Farel</h1>
-            <p>Selamat datang di portofolio saya. Saya adalah mahasiswa Ilmu Komputer yang baru memulai perjalanan akademik di dunia teknologi. Mari berkenalan lebih jauh!</p>
-            <a href="#about" class="btn">Kenali Saya Lebih Jauh</a>
+            <div class="home-content">
+                <h1 class="home-title">
+                    <span class="title-part">Halo, Saya</span>
+                    <span class="title-main">Farel</span>
+                </h1>
+                <p class="home-description">
+                    Selamat datang di portfolio saya. Saya adalah mahasiswa yang antusias 
+                    dengan teknologi terbarukan sperti AI dan Astronomi. Portfolio ini 
+                    menampilkan perkenalan singkat, biodata, dan informasi kontak saya.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#biodata" class="btn btn-primary">Lihat Biodata</a>
+                    <a href="#kontak" class="btn btn-secondary">Hubungi Saya</a>
+                </div>
+            </div>
+            <div class="home-visual">
+                <div class="math-animation">
+                    <div class="formula-display">
+                        <span class="formula-text">E = mc²</span>
+                    </div>
+                    <div class="math-glow"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="about" class="about">
+    <!-- Bagian Biodata -->
+    <section id="biodata" class="section biodata-section">
         <div class="container">
-            <h2 class="section-title">Tentang Saya</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Biodata Diri</h3>
-                    <div class="biodata">
-                        <div class="biodata-item">
-                            <span class="biodata-label">Nama Lengkap:</span>
-                            <span>Farel Luther Siagian</span>
+            <h2 class="section-title">Biodata</h2>
+            <div class="biodata-content">
+                <div class="biodata-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Informasi Pribadi</h3>
+                    <div class="card-content">
+                        <div class="info-item">
+                            <span class="info-label">Nama:</span>
+                            <span class="info-value">Farel Luther Siagian</span>
                         </div>
-                        <div class="biodata-item">
-                            <span class="biodata-label">Tempat Lahir:</span>
-                            <span>Medan</span>
+                        <div class="info-item">
+                            <span class="info-label">Tempat, Tangal Lahir:</span>
+                            <span class="info-value">Medan, 28 September 2006</span>
                         </div>
-                        <div class="biodata-item">
-                            <span class="biodata-label">Tanggal Lahir:</span>
-                            <span>28 September 2006</span>
+                        <div class="info-item">
+                            <span class="info-label">Alamat:</span>
+                            <span class="info-value">Jl. Perjuangan GG. Bangun No 7</span>
                         </div>
-                        <div class="biodata-item">
-                            <span class="biodata-label">Agama:</span>
-                            <span>Kristen</span>
-                        </div>
-                        <div class="biodata-item">
-                            <span class="biodata-label">Status:</span>
-                            <span>Mahasiswa</span>
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <span class="info-value">lutherfarels@gmail.com</span>
                         </div>
                     </div>
-                    
-                    <h3>Perkenalan</h3>
-                    <p>Saya adalah mahasiswa Ilmu Komputer yang baru saja memulai perjalanan kuliah di tahun ini. Saya memiliki ketertarikan yang besar terhadap teknologi, pemrograman, dan inovasi digital. Saya berharap dapat mengembangkan kemampuan teknis dan kontribusi saya dalam dunia teknologi melalui pendidikan yang saya tempuh.</p>
                 </div>
-                <div class="education-timeline">
-                    <h3>Riwayat Pendidikan</h3>
-                    <div class="timeline-item">
-                        <h4>Sekolah Dasar (SD)</h4>
-                        <p>Saya menempuh pendidikan dasar di SD Sutomo 1 Medan dari tahun 2012 hingga 2018.</p>
+                <div class="biodata-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z" />
+                        </svg>
                     </div>
-                    <div class="timeline-item">
-                        <h4>Sekolah Menengah Pertama (SMP)</h4>
-                        <p>Saya melanjutkan pendidikan di SMP Sutomo 1 Medan dari tahun 2018 hingga 2021. Di SMP, saya mulai tertarik dengan pemrograman sederhana karena ada mata pelajaran Lab. Komputer. Dan bahasa pemrograman yang saya pelajari dan gunakan adalah Phyton.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>Sekolah Menengah Atas (SMA)</h4>
-                        <p>Saya bersekolah di SMA Sutomo 1 Medan dari tahun 2021 hingga 2024 dengan jurusan IPA.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>Perguruan Tinggi</h4>
-                        <p>Saat ini saya sedang menempuh pendidikan S1 di Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Negeri Medan. Saya baru saja memulai perjalanan ini dan sangat antusias untuk mempelajari lebih dalam tentang ilmu komputer dan teknologi terkini.</p>
+                    <h3 class="card-title">Minat & Bakat</h3>
+                    <div class="interests-list">
+                        <div class="interest-item">
+                            <div class="interest-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M4,2H20A2,2 0 0,1 22,4V4A2,2 0 0,1 20,6H14.23L16.64,8.41L15.41,9.64L12,6.23L8.59,9.64L7.36,8.41L9.77,6H4A2,2 0 0,1 2,4V4A2,2 0 0,1 4,2M4,8H20V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V8M6,12V16H10V12H6M12,12V16H16V12H12Z"/>
+                                </svg>
+                            </div>
+                            <span class="interest-text">Matematika</span>
+                        </div>
+                        <div class="interest-item">
+                            <div class="interest-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M21 11C21 16.55 17.16 21.74 12 23C6.84 21.74 3 16.55 3 11V5L12 1L21 5V11M12 21C15.75 20 19 15.54 19 11.22V6.3L12 3.18L5 6.3V11.22C5 15.54 8.25 20 12 21Z"/>
+                                </svg>
+                            </div>
+                            <span class="interest-text">Fisika Astronomi</span>
+                        </div>
+                        <div class="interest-item">
+                            <div class="interest-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z"/>
+                                </svg>
+                            </div>
+                            <span class="interest-text">Teknologi Terbarukan</span>
+                        </div>
+                        <div class="interest-item">
+                            <div class="interest-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M13,19V16H21V19H13M8.5,13L2.47,7H6.71L11.67,11.95C12.25,12.54 12.25,13.5 11.67,14.03L6.74,19H2.5L8.5,13Z"/>
+                                </svg>
+                            </div>
+                            <span class="interest-text">Pemrograman</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <!-- Bagian Kontak -->
+    <section id="kontak" class="section kontak-section">
         <div class="container">
-            <h2 class="section-title">Hubungi Saya</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📞</div>
-                    <div class="contact-details">
-                        <h3>Telepon</h3>
-                        <p>+62 812-6259-9572</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">✉️</div>
-                    <div class="contact-details">
-                        <h3>Email</h3>
-                        <p>lutherfarels@gmail.com</p>
-                    </div>
+            <h2 class="section-title">Kontak</h2>
+            <div class="kontak-content">
+                <p class="kontak-description">
+                    Tertarik dengan fisika matematika atau ingin berkolaborasi dalam proyek teknologi? 
+                    Jangan ragu untuk menghubungi saya melalui media sosial berikut:
+                </p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/lutherfarels?igsh=ank5NTk5amFpcTZ1" class="social-link" id="instagram-link">
+                        <div class="social-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+                            </svg>
+                        </div>
+                        <span class="social-text">Instagram</span>
+                        <div class="social-hover">@lutherfarels</div>
+                    </a>
+                    <a href="https://github.com/lutherfarels" class="social-link" id="github-link">
+                        <div class="social-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                            </svg>
+                        </div>
+                        <span class="social-text">GitHub</span>
+                        <div class="social-hover">lutherfarels</div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="social-links">
-                <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="GitHub">git</a>
-                <a href="#" aria-label="Instagram">ig</a>
-                <a href="#" aria-label="Email">@</a>
-            </div>
-            <p>&copy; <span id="current-year">2025</span> Farel Luther Siagian , Portofolio Mahasiswa Ilmu Komputer. All rights reserved.</p>
+            <p>&copy; 2025 Portfolio Farel. Explore the Universe of Mathematics.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
