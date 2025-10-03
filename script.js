@@ -58,20 +58,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observe elements for animation
-    document.querySelectorAll('.biodata-card, .social-link, .section-title, .interest-item').forEach(el => {
+    document.querySelectorAll('.biodata-card, .social-link, .section-title, .interest-item, .education-item').forEach(el => {
         observer.observe(el);
     });
     
     // Add animation classes dynamically
     const style = document.createElement('style');
     style.textContent = `
-        .biodata-card, .social-link, .section-title, .interest-item {
+        .biodata-card, .social-link, .section-title, .interest-item, .education-item {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s, transform 0.8s;
         }
         
-        .biodata-card.animate-in, .social-link.animate-in, .section-title.animate-in, .interest-item.animate-in {
+        .biodata-card.animate-in, .social-link.animate-in, .section-title.animate-in, .interest-item.animate-in, .education-item.animate-in {
             opacity: 1;
             transform: translateY(0);
         }
@@ -97,6 +97,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         .interest-item:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+        
+        .education-item:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+        
+        .education-item:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+        
+        .education-item:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+        
+        .education-item:nth-child(4) {
             transition-delay: 0.4s;
         }
         
