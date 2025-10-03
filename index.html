@@ -30,6 +30,9 @@
                     <a href="#biodata" class="nav-link">Biodata</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#pendidikan" class="nav-link">Pendidikan</a>
+                </li>
+                <li class="nav-item">
                     <a href="#kontak" class="nav-link">Kontak</a>
                 </li>
             </ul>
@@ -51,12 +54,12 @@
                 </h1>
                 <p class="home-description">
                     Selamat datang di portfolio saya. Saya adalah mahasiswa yang antusias 
-                    dengan teknologi terbarukan sperti AI dan Astronomi. Portfolio ini 
-                    menampilkan perkenalan singkat, biodata, dan informasi kontak saya.
+                    dengan teknologi terbarukan seperti AI dan Astronomi. Portfolio ini 
+                    menampilkan perkenalan singkat, biodata, riwayat pendidikan, dan informasi kontak saya.
                 </p>
                 <div class="cta-buttons">
                     <a href="#biodata" class="btn btn-primary">Lihat Biodata</a>
-                    <a href="#kontak" class="btn btn-secondary">Hubungi Saya</a>
+                    <a href="#pendidikan" class="btn btn-secondary">Riwayat Pendidikan</a>
                 </div>
             </div>
             <div class="home-visual">
@@ -75,7 +78,7 @@
         <div class="container">
             <h2 class="section-title">Biodata</h2>
             <div class="biodata-content">
-                <div class="biodata-card">
+                <div class="biodata-card wide-card">
                     <div class="card-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
@@ -83,39 +86,52 @@
                     </div>
                     <h3 class="card-title">Informasi Pribadi</h3>
                     <div class="card-content">
-                        <div class="info-item">
-                            <span class="info-label">Nama:</span>
-                            <span class="info-value">Farel Luther Siagian</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Tempat, Tangal Lahir:</span>
-                            <span class="info-value">Medan, 28 September 2006</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Alamat:</span>
-                            <span class="info-value">Jl. Perjuangan GG. Bangun No 7</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Email:</span>
-                            <span class="info-value">lutherfarels@gmail.com</span>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Nama Lengkap:</span>
+                                <span class="info-value">Farel Luther Siagian</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Tempat, Tanggal Lahir:</span>
+                                <span class="info-value">Medan, 28 September 2006</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Alamat:</span>
+                                <span class="info-value">Jl. Perjuangan GG. Bangun No. 7</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Email:</span>
+                                <span class="info-value">lutherfarels@gmail.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Telepon:</span>
+                                <span class="info-value">+62 812-6259-9572</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Status:</span>
+                                <span class="info-value">Mahasiswa</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="biodata-card">
+                <div class="biodata-card wide-card">
                     <div class="card-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z" />
                         </svg>
                     </div>
                     <h3 class="card-title">Minat & Bakat</h3>
-                    <div class="interests-list">
+                    <div class="interests-grid">
                         <div class="interest-item">
                             <div class="interest-icon">
                                 <svg viewBox="0 0 24 24">
                                     <path d="M4,2H20A2,2 0 0,1 22,4V4A2,2 0 0,1 20,6H14.23L16.64,8.41L15.41,9.64L12,6.23L8.59,9.64L7.36,8.41L9.77,6H4A2,2 0 0,1 2,4V4A2,2 0 0,1 4,2M4,8H20V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V8M6,12V16H10V12H6M12,12V16H16V12H12Z"/>
                                 </svg>
                             </div>
-                            <span class="interest-text">Matematika</span>
+                            <div class="interest-content">
+                                <span class="interest-text">Matematika</span>
+                                <p class="interest-desc">Trigonometri, Aljabar Linear, Limit, Diferensial</p>
+                            </div>
                         </div>
                         <div class="interest-item">
                             <div class="interest-icon">
@@ -123,7 +139,10 @@
                                     <path d="M21 11C21 16.55 17.16 21.74 12 23C6.84 21.74 3 16.55 3 11V5L12 1L21 5V11M12 21C15.75 20 19 15.54 19 11.22V6.3L12 3.18L5 6.3V11.22C5 15.54 8.25 20 12 21Z"/>
                                 </svg>
                             </div>
-                            <span class="interest-text">Fisika Astronomi</span>
+                            <div class="interest-content">
+                                <span class="interest-text">Fisika Astronomi</span>
+                                <p class="interest-desc">Mekanika Kuantum, Kosmologi, Eksplorasi Antariksa</p>
+                            </div>
                         </div>
                         <div class="interest-item">
                             <div class="interest-icon">
@@ -131,7 +150,10 @@
                                     <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z"/>
                                 </svg>
                             </div>
-                            <span class="interest-text">Teknologi Terbarukan</span>
+                            <div class="interest-content">
+                                <span class="interest-text">Teknologi Terbarukan</span>
+                                <p class="interest-desc">Energi Surya, Teknologi Hijau, Inovasi Ramah Lingkungan</p>
+                            </div>
                         </div>
                         <div class="interest-item">
                             <div class="interest-icon">
@@ -139,8 +161,68 @@
                                     <path d="M13,19V16H21V19H13M8.5,13L2.47,7H6.71L11.67,11.95C12.25,12.54 12.25,13.5 11.67,14.03L6.74,19H2.5L8.5,13Z"/>
                                 </svg>
                             </div>
-                            <span class="interest-text">Pemrograman</span>
+                            <div class="interest-content">
+                                <span class="interest-text">Pemrograman</span>
+                                <p class="interest-desc">Web Development, Machine Learning, Algorithm Design</p>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Pendidikan -->
+    <section id="pendidikan" class="section pendidikan-section">
+        <div class="container">
+            <h2 class="section-title">Riwayat Pendidikan</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-year">2012 - 2018</div>
+                    <div class="education-content">
+                        <div class="education-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="education-title">SD Sutomo 1 Medan</h3>
+                        <p class="education-desc">Baru mengenal tentang antariksa dan sering mengikuti OSK (Olimpiade Sains Kuark).</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-year">2018 - 2021</div>
+                    <div class="education-content">
+                        <div class="education-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="education-title">SMP Sutomo 1 Medan</h3>
+                        <p class="education-desc">Mulai tertarik dengan teknologi dan komputer karena sekolah memiliki mata pelajaran Laboratorium Komputer. Dan salah satu materinya adalah Phyton.</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-year">2021 - 2024</div>
+                    <div class="education-content">
+                        <div class="education-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="education-title">SMA Sutomo 1 Medan</h3>
+                        <p class="education-desc">Jurusan IPA. Mendalami fisika dan matematika.</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-year">2025 - Sekarang</div>
+                    <div class="education-content">
+                        <div class="education-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="education-title">Universitas Negeri Medan</h3>
+                        <p class="education-desc">Program Studi Ilmu Komputer.</p>
                     </div>
                 </div>
             </div>
