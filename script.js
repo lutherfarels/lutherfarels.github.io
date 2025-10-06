@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
             '∂²u/∂t² = c²∇²u',
             'e^(iπ) + 1 = 0',
             'ψ = A sin(kx - ωt)',
-            'Sok tau',
+            'a² + b² = c²',
             'F = G(m₁m₂)/r²',
             '∇²ψ + k²ψ = 0',
             'S = k log W',
@@ -266,4 +266,5 @@ document.addEventListener('DOMContentLoaded', function() {
     createFloatingFormulas();
     createParticles();
 });
+
 
