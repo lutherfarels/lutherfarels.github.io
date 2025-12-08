@@ -1,274 +1,269 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Farel</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrafficNeon Lab</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Background dengan efek neon -->
-    <div class="neon-background"></div>
-    
-    <!-- Animasi rumus matematika dan fisika -->
-    <div id="floating-formulas"></div>
-    
-    <!-- Partikel interaktif -->
-    <div id="particles"></div>
-    
-    <!-- Navigasi -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">PORTOFOLIO</span>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#biodata" class="nav-link">Biodata</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#pendidikan" class="nav-link">Pendidikan</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#kontak" class="nav-link">Kontak</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+<header class="topbar">
+  <div class="logo">Traffic<span>Neon</span> Lab</div>
+  <nav class="nav">
+    <button class="nav-link" data-goto="landing">Beranda</button>
+    <button class="nav-link" data-goto="fitur">Fitur</button>
+    <button class="nav-link" data-goto="konsep">Konsep Turunan</button>
+    <button class="nav-link" data-goto="tutorial">Tutorial</button>
+  </nav>
+</header>
 
-    <!-- Bagian Home/Perkenalan -->
-    <section id="home" class="section home-section">
-        <div class="container">
-            <div class="home-content">
-                <h1 class="home-title">
-                    <span class="title-part">Halo, Saya</span>
-                    <span class="title-main">Farel</span>
-                </h1>
-                <p class="home-description">
-                    Selamat datang di portfolio saya. Saya adalah mahasiswa yang antusias 
-                    dengan teknologi terbarukan seperti AI dan Astronomi. Portfolio ini 
-                    menampilkan perkenalan singkat, biodata, riwayat pendidikan, dan informasi kontak saya.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#biodata" class="btn btn-primary">Lihat Biodata</a>
-                    <a href="#pendidikan" class="btn btn-secondary">Riwayat Pendidikan</a>
-                </div>
-            </div>
-            <div class="home-visual">
-                <div class="math-animation">
-                    <div class="formula-display">
-                        <span class="formula-text">E = mc²</span>
-                    </div>
-                    <div class="math-glow"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+<main>
+  <!-- ========== LANDING ========== -->
+  <section id="landing" class="page-section active">
+    <div class="landing-wrap">
+      <div class="landing-text">
+        <p class="tagline">Mini Riset Kalkulus • Kepadatan Lalu Lintas</p>
+        <h1>Selamat datang di <span>TrafficNeon Lab</span></h1>
+        <p class="subtitle">
+          Website ini membantu menganalisis kepadatan lalu lintas berdasarkan data
+          hasil pengamatan dan konsep turunan numerik.
+        </p>
+      </div>
 
-    <!-- Bagian Biodata -->
-    <section id="biodata" class="section biodata-section">
-        <div class="container">
-            <h2 class="section-title">Biodata</h2>
-            <div class="biodata-content">
-                <div class="biodata-card wide-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
-                        </svg>
-                    </div>
-                    <h3 class="card-title">Informasi Pribadi</h3>
-                    <div class="card-content">
-                        <div class="info-grid">
-                            <div class="info-item">
-                                <span class="info-label">Nama Lengkap:</span>
-                                <span class="info-value">Farel Luther Siagian</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">Tempat, Tanggal Lahir:</span>
-                                <span class="info-value">Medan, 28 September 2006</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">Alamat:</span>
-                                <span class="info-value">Jl. Perjuangan GG. Bangun No. 7</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">Email:</span>
-                                <span class="info-value">lutherfarels@gmail.com</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">Telepon:</span>
-                                <span class="info-value">+62 812-6259-9572</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">Status:</span>
-                                <span class="info-value">Mahasiswa</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="biodata-card wide-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z" />
-                        </svg>
-                    </div>
-                    <h3 class="card-title">Minat & Bakat</h3>
-                    <div class="interests-grid">
-                        <div class="interest-item">
-                            <div class="interest-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M4,2H20A2,2 0 0,1 22,4V4A2,2 0 0,1 20,6H14.23L16.64,8.41L15.41,9.64L12,6.23L8.59,9.64L7.36,8.41L9.77,6H4A2,2 0 0,1 2,4V4A2,2 0 0,1 4,2M4,8H20V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V8M6,12V16H10V12H6M12,12V16H16V12H12Z"/>
-                                </svg>
-                            </div>
-                            <div class="interest-content">
-                                <span class="interest-text">Matematika</span>
-                                <p class="interest-desc">Trigonometri, Aljabar Linear, Limit, Diferensial</p>
-                            </div>
-                        </div>
-                        <div class="interest-item">
-                            <div class="interest-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M21 11C21 16.55 17.16 21.74 12 23C6.84 21.74 3 16.55 3 11V5L12 1L21 5V11M12 21C15.75 20 19 15.54 19 11.22V6.3L12 3.18L5 6.3V11.22C5 15.54 8.25 20 12 21Z"/>
-                                </svg>
-                            </div>
-                            <div class="interest-content">
-                                <span class="interest-text">Fisika Astronomi</span>
-                                <p class="interest-desc">Mekanika Kuantum, Kosmologi, Eksplorasi Antariksa</p>
-                            </div>
-                        </div>
-                        <div class="interest-item">
-                            <div class="interest-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z"/>
-                                </svg>
-                            </div>
-                            <div class="interest-content">
-                                <span class="interest-text">Teknologi Terbarukan</span>
-                                <p class="interest-desc">Energi Surya, Teknologi Hijau, Inovasi Ramah Lingkungan</p>
-                            </div>
-                        </div>
-                        <div class="interest-item">
-                            <div class="interest-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M13,19V16H21V19H13M8.5,13L2.47,7H6.71L11.67,11.95C12.25,12.54 12.25,13.5 11.67,14.03L6.74,19H2.5L8.5,13Z"/>
-                                </svg>
-                            </div>
-                            <div class="interest-content">
-                                <span class="interest-text">Pemrograman</span>
-                                <p class="interest-desc">Web Development, Machine Learning, Algorithm Design</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="mode-buttons">
+        <div class="mode-card">
+          <h2>Mode Peneliti</h2>
+          <p>Masukkan data observasi dan hitung tabel per interval.</p>
+          <button id="btn-open-researcher" class="primary">Butuh password</button>
         </div>
-    </section>
-
-    <!-- Bagian Pendidikan -->
-    <section id="pendidikan" class="section pendidikan-section">
-        <div class="container">
-            <h2 class="section-title">Riwayat Pendidikan</h2>
-            <div class="education-timeline">
-                <div class="education-item">
-                    <div class="education-year">2012 - 2018</div>
-                    <div class="education-content">
-                        <div class="education-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z"/>
-                            </svg>
-                        </div>
-                        <h3 class="education-title">SD Sutomo 1 Medan</h3>
-                        <p class="education-desc">Baru mengenal tentang antariksa dan sering mengikuti OSK (Olimpiade Sains Kuark).</p>
-                    </div>
-                </div>
-                <div class="education-item">
-                    <div class="education-year">2018 - 2021</div>
-                    <div class="education-content">
-                        <div class="education-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z"/>
-                            </svg>
-                        </div>
-                        <h3 class="education-title">SMP Sutomo 1 Medan</h3>
-                        <p class="education-desc">Mulai tertarik dengan teknologi dan komputer karena sekolah memiliki mata pelajaran Laboratorium Komputer. Dan salah satu materinya adalah Phyton.</p>
-                    </div>
-                </div>
-                <div class="education-item">
-                    <div class="education-year">2021 - 2024</div>
-                    <div class="education-content">
-                        <div class="education-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z"/>
-                            </svg>
-                        </div>
-                        <h3 class="education-title">SMA Sutomo 1 Medan</h3>
-                        <p class="education-desc">Jurusan IPA. Mendalami fisika dan matematika.</p>
-                    </div>
-                </div>
-                <div class="education-item">
-                    <div class="education-year">2025 - Sekarang</div>
-                    <div class="education-content">
-                        <div class="education-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,15 12,15C8,15 5,13.18 5,13.18Z"/>
-                            </svg>
-                        </div>
-                        <h3 class="education-title">Universitas Negeri Medan</h3>
-                        <p class="education-desc">Program Studi Ilmu Komputer.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="mode-card">
+          <h2>Mode Pengguna</h2>
+          <p>Lihat ringkasan jam sepi, normal, dan ramai dari data terbaru.</p>
+          <button id="btn-open-user" class="secondary">Tanpa login</button>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Bagian Kontak -->
-    <section id="kontak" class="section kontak-section">
-        <div class="container">
-            <h2 class="section-title">Kontak</h2>
-            <div class="kontak-content">
-                <p class="kontak-description">
-                    Tertarik dengan fisika matematika atau ingin berkolaborasi dalam proyek teknologi? 
-                    Jangan ragu untuk menghubungi saya melalui media sosial berikut:
-                </p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/lutherfarels?igsh=ank5NTk5amFpcTZ1" class="social-link" id="instagram-link">
-                        <div class="social-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
-                            </svg>
-                        </div>
-                        <span class="social-text">Instagram</span>
-                        <div class="social-hover">@lutherfarels</div>
-                    </a>
-                    <a href="https://github.com/lutherfarels" class="social-link" id="github-link">
-                        <div class="social-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
-                            </svg>
-                        </div>
-                        <span class="social-text">GitHub</span>
-                        <div class="social-hover">lutherfarels</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ========== MODE PENELITI ========== -->
+  <section id="researcher" class="page-section">
+    <h2 class="section-title">Mode Peneliti</h2>
+    <p class="section-subtitle">
+      Masukkan data jumlah kendaraan per interval. Hasilnya otomatis dihitung dan
+      disimpan sebagai draft.
+    </p>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Portfolio Farel. Explore the Universe of Mathematics.</p>
-        </div>
-    </footer>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Info Observasi</h3>
+        <label>Nama lokasi / simpang
+          <input type="text" id="obs-location" placeholder="Misal: Simpang Lonsum" />
+        </label>
+        <label>Nama pengamat
+          <input type="text" id="obs-observer" placeholder="Nama kamu" />
+        </label>
+        <label>Tanggal observasi
+          <input type="date" id="obs-date" />
+        </label>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="card">
+        <h3>Pengaturan Interval</h3>
+        <label>Waktu mulai (HH:MM)
+          <input type="time" id="interval-start" value="06:00" />
+        </label>
+        <label>Panjang interval (menit)
+          <input type="number" id="interval-minutes" value="15" min="1" />
+        </label>
+        <label>Jumlah interval
+          <input type="number" id="interval-count" value="8" min="1" max="30" />
+        </label>
+        <button id="btn-make-intervals" class="primary full">Buat input interval</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Input Jumlah Kendaraan per Interval</h3>
+      <p class="hint">
+        Setelah menekan "Buat input interval", kolom input akan muncul di sini.
+      </p>
+      <div id="interval-inputs" class="interval-grid"></div>
+      <div class="actions-right">
+        <button id="btn-calc-save" class="primary">Hitung turunan &amp; simpan draft</button>
+      </div>
+      <p id="researcher-status" class="status-text"></p>
+    </div>
+
+    <div class="card">
+      <h3>Detail Per Interval (draft terakhir dihitung)</h3>
+      <div class="table-wrapper">
+        <table id="detail-table">
+          <thead>
+            <tr>
+              <th>t</th>
+              <th>Waktu</th>
+              <th>f(t) (kendaraan)</th>
+              <th>f’(t)</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Draft Data Tersimpan</h3>
+      <p class="hint">
+        Setiap kali menghitung, 1 draft baru disimpan. Pilih draft yang ingin dipakai di Mode Pengguna 
+        atau hapus jika tidak diperlukan.
+      </p>
+      <div class="table-wrapper">
+        <table id="draft-table">
+          <thead>
+            <tr>
+              <th>Nama lokasi</th>
+              <th>Pengamat</th>
+              <th>Tanggal</th>
+              <th>Interval</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MODE PENGGUNA ========== -->
+  <section id="user" class="page-section">
+    <h2 class="section-title">Mode Pengguna</h2>
+    <p class="section-subtitle">
+      Pilih data pengamatan yang tersedia, lalu lihat ringkasan, grafik kepadatan,
+      dan keterangan kemacetan.
+    </p>
+
+    <div class="card">
+      <h3>Pilih Data</h3>
+      <label>Draft data
+        <select id="user-draft-select">
+          <option value="">Belum ada data yang dipilih</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="card" id="user-summary-card">
+      <h3>Ringkasan Data</h3>
+      <p id="user-summary-empty" class="hint">
+        Belum ada data yang dipilih. Pilih draft pada daftar di atas atau dari Mode Peneliti.
+      </p>
+      <div id="user-summary-content" class="summary-grid hidden">
+        <p><strong>Lokasi:</strong> <span id="sum-location"></span></p>
+        <p><strong>Pengamat:</strong> <span id="sum-observer"></span></p>
+        <p><strong>Tanggal:</strong> <span id="sum-date"></span></p>
+        <p><strong>Interval:</strong> <span id="sum-interval"></span></p>
+        <p><strong>Interval tersibuk:</strong> <span id="sum-busy"></span></p>
+        <p><strong>Interval tersepi:</strong> <span id="sum-quiet"></span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Grafik Kepadatan per Interval</h3>
+      <p class="hint">
+        Titik warna hijau = sepi, biru = normal, merah = ramai. Garis menunjukkan
+        perubahan jumlah kendaraan terhadap waktu.
+      </p>
+      <div class="chart-wrapper">
+        <canvas id="traffic-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Keterangan Kemacetan</h3>
+      <div id="user-keterangan">
+        <p class="hint">
+          Informasi singkat tentang kondisi jalan akan muncul di sini setelah data dipilih.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Tabel Ringkasan Interval</h3>
+      <div class="table-wrapper">
+        <table id="user-table">
+          <thead>
+            <tr>
+              <th>t</th>
+              <th>Waktu</th>
+              <th>f(t)</th>
+              <th>f’(t)</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FITUR / KONSEP / TUTORIAL ========== -->
+  <section id="fitur" class="page-section">
+    <h2 class="section-title">Fitur Utama</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Input Observasi</h3>
+        <p>Mencatat nama jalan, pengamat, dan tanggal observasi.</p>
+      </div>
+      <div class="card">
+        <h3>Turunan Numerik</h3>
+        <p>
+          Menghitung laju perubahan jumlah kendaraan dengan pendekatan forward,
+          backward, dan central difference.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Draft &amp; Publikasi</h3>
+        <p>
+          Menyimpan beberapa draft sekaligus dan memilih mana yang ingin
+          ditampilkan kepada pengguna.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="konsep" class="page-section">
+    <h2 class="section-title">Konsep Turunan yang Dipakai</h2>
+    <div class="card">
+      <p>
+        Misalkan f(t) menyatakan jumlah kendaraan pada interval ke-t. Turunan f’(t) menyatakan
+        <em>laju perubahan</em> jumlah kendaraan terhadap waktu.
+      </p>
+      <ul>
+        <li>Forward: f’(0) ≈ f(1) – f(0)</li>
+        <li>Backward: f’(n) ≈ f(n) – f(n-1)</li>
+        <li>Central: f’(t) ≈ (f(t+1) – f(t-1)) / 2 untuk 0 &lt; t &lt; n</li>
+      </ul>
+      <p>
+        Dari nilai f’(t), kita dapat melihat kapan kepadatan kendaraan naik cepat,
+        stabil, atau menurun.
+      </p>
+    </div>
+  </section>
+
+  <section id="tutorial" class="page-section">
+    <h2 class="section-title">Tutorial Singkat</h2>
+    <div class="card">
+      <ol>
+        <li>Dari halaman awal, pilih <strong>Mode Peneliti</strong> dan masukkan password.</li>
+        <li>Isi info observasi dan atur interval waktu, lalu klik <strong>Buat input interval</strong>.</li>
+        <li>Isi jumlah kendaraan di setiap interval, lalu klik <strong>Hitung turunan &amp; simpan draft</strong>.</li>
+        <li>Draft baru akan muncul di tabel draft. Pilih salah satu draft untuk digunakan di Mode Pengguna.</li>
+        <li>Buka <strong>Mode Pengguna</strong>, pilih draft, lalu lihat ringkasan, grafik, dan keterangan kemacetan.</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
