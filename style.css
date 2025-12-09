@@ -1,413 +1,340 @@
-:root {
-  --bg: #020617;
-  --bg-soft: #020817;
-  --card: #020e1f;
-  --card-soft: #041427;
-  --accent-yellow: #facc15;
-  --accent-blue: #22d3ee;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
-  --border: #1f2937;
-  --green: #22c55e;
-  --blue: #3b82f6;
-  --red: #ef4444;
-  --radius-xl: 18px;
-  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
-  --max-width: 1120px;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #000 100%);
-  color: var(--text);
-  scroll-behavior: smooth;
-}
-
-/* ---------- TOPBAR ---------- */
-
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  backdrop-filter: blur(16px);
-  background: linear-gradient(to right, #020617cc, #030712dd);
-  border-bottom: 1px solid #111827;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 18px;
-}
-
-.logo {
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-
-.logo span {
-  color: var(--accent-yellow);
-}
-
-.nav {
-  display: flex;
-  gap: 10px;
-}
-
-.nav-link {
-  border: none;
-  background: transparent;
-  color: var(--muted);
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.nav-link:hover {
-  color: var(--accent-blue);
-  background: rgba(15, 23, 42, 0.9);
-}
-
-/* ---------- LAYOUT ---------- */
-
-main {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 24px 16px 40px;
-}
-
-.page-section {
-  display: none;
-  margin-top: 24px;
-}
-
-.page-section.active {
-  display: block;
-}
-
-.section-title {
-  font-size: 1.6rem;
-  margin: 0 0 6px;
-}
-
-.section-subtitle {
-  margin-top: 0;
-  margin-bottom: 16px;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-/* ---------- LANDING ---------- */
-
-.landing-wrap {
-  min-height: calc(100vh - 80px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.landing-text h1 {
-  font-size: clamp(2.1rem, 3vw + 1rem, 2.8rem);
-  margin-bottom: 8px;
-}
-
-.landing-text h1 span {
-  color: var(--accent-yellow);
-}
-
-.tagline {
-  color: var(--accent-blue);
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.subtitle {
-  color: var(--muted);
-  max-width: 540px;
-  margin-inline: auto;
-}
-
-.mode-buttons {
-  margin-top: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.mode-card {
-  background: radial-gradient(circle at top left, #1d283a 0, #020617 45%);
-  border-radius: var(--radius-xl);
-  padding: 18px 22px;
-  width: min(260px, 100%);
-  box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(148, 163, 184, 0.15);
-  text-align: left;
-}
-
-.mode-card h2 {
-  margin-top: 0;
-  margin-bottom: 6px;
-}
-
-.mode-card p {
-  margin-top: 0;
-  margin-bottom: 12px;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-/* ---------- COMPONENTS ---------- */
-
-.card {
-  background: radial-gradient(circle at top left, #111827 0, #020617 55%);
-  border-radius: var(--radius-xl);
-  padding: 16px 18px 18px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(31, 41, 55, 0.9);
-  margin-bottom: 18px;
-}
-
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 8px;
-}
-
-label {
-  display: block;
-  font-size: 0.85rem;
-  margin-top: 8px;
-  margin-bottom: 4px;
-  color: var(--muted);
-}
-
-label input,
-label select {
-  display: block;
-  width: 100%;
-  margin-top: 4px;
-}
-
-input,
-select {
-  border-radius: 999px;
-  border: 1px solid #1f2937;
-  background: #020617;
-  color: var(--text);
-  padding: 8px 10px;
-  font-size: 0.9rem;
-}
-
-input:focus,
-select:focus {
-  outline: 2px solid var(--accent-blue);
-  border-color: transparent;
-}
-
-button {
-  font-family: inherit;
-}
-
-.primary,
-.secondary {
-  border-radius: 999px;
-  padding: 8px 14px;
-  font-size: 0.9rem;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.15s ease, background 0.15s ease;
-}
-
-.primary {
-  background: linear-gradient(to right, var(--accent-blue), var(--accent-yellow));
-  color: #020617;
-  font-weight: 600;
-}
-
-.secondary {
-  background: #0b1120;
-  color: var(--accent-blue);
-  border: 1px solid #1f2937;
-}
-
-.primary:hover,
-.secondary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-}
-
-.primary.full {
-  width: 100%;
-}
-
-.hint {
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-.status-text {
-  margin-top: 8px;
-  font-size: 0.85rem;
-  color: var(--accent-blue);
-}
-
-/* ---------- GRID & TABLE ---------- */
-
-.grid-2 {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: 16px;
-  margin-bottom: 18px;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.summary-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px 18px;
-  font-size: 0.9rem;
-}
-
-.summary-grid p {
-  margin: 0;
-}
-
-.hidden {
-  display: none;
-}
-
-.interval-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.interval-label {
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin-bottom: 2px;
-}
-
-.actions-right {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 12px;
-}
-
-.table-wrapper {
-  overflow-x: auto;
-  border-radius: 12px;
-  border: 1px solid rgba(31, 41, 55, 0.9);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.82rem;
-}
-
-thead {
-  background: #020617;
-}
-
-th,
-td {
-  padding: 8px 10px;
-  border-bottom: 1px solid #111827;
-  text-align: left;
-}
-
-th {
-  font-weight: 500;
-  color: var(--muted);
-}
-
-tr:nth-child(even) td {
-  background: rgba(15, 23, 42, 0.45);
-}
-
-/* status pill */
-.pill {
-  display: inline-block;
-  border-radius: 999px;
-  padding: 2px 8px;
-  font-size: 0.75rem;
-  color: #020617;
-  font-weight: 600;
-}
-
-.pill-sepi {
-  background: var(--green);
-}
-
-.pill-normal {
-  background: var(--blue);
-}
-
-.pill-ramai {
-  background: var(--red);
-}
-
-/* ---------- CHART ---------- */
-
-.chart-wrapper {
-  width: 100%;
-  max-width: 900px;
-  margin: 8px auto 0;
-}
-
-#traffic-chart {
-  width: 100%;
-  height: 260px;
-  display: block;
-}
-
-/* ---------- RESPONSIVE ---------- */
-
-@media (max-width: 840px) {
-  main {
-    padding-inline: 12px;
+const API_KEY = "PYV4xuUOWXx72nxZPhruGd7cFE8pVy2n";
+
+let sampling = null;
+let previous = null;
+
+window.onload = function () {
+  if (typeof tt === "undefined") {
+    alert("TomTom SDK gagal dimuat!");
+    return;
   }
 
-  .grid-2 {
-    grid-template-columns: minmax(0, 1fr);
+  tt.setProductInfo("traffic-lab", "1.0");
+
+  const landing = document.getElementById("landing");
+  const pages   = document.getElementById("pages");
+
+  const btnHome     = document.getElementById("btn-home");
+  const btnFitur    = document.getElementById("btn-fitur");
+  const btnTutorial = document.getElementById("btn-tutorial");
+  const btnKonsep   = document.getElementById("btn-konsep");
+  const btnAnalisis = document.getElementById("btn-analisis");
+
+  const secFitur    = document.getElementById("sec-fitur");
+  const secTutorial = document.getElementById("sec-tutorial");
+  const secKonsep   = document.getElementById("sec-konsep");
+  const secAnalisis = document.getElementById("sec-analisis");
+
+  const allSections = [secFitur, secTutorial, secKonsep, secAnalisis];
+
+  function showSection(section) {
+    allSections.forEach(sec => sec.classList.add("hidden"));
+    section.classList.remove("hidden");
+
+    // scroll ke atas konten
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // jika halaman analisis dibuka, pastikan map resize
+    if (section === secAnalisis && map) {
+      setTimeout(() => map.resize(), 300);
+    }
   }
 
-  .grid-3 {
-    grid-template-columns: minmax(0, 1fr);
+  function openPage(section) {
+    landing.classList.add("hidden");
+    pages.classList.remove("hidden");
+    showSection(section);
   }
 
-  .summary-grid {
-    grid-template-columns: minmax(0, 1fr);
+  btnFitur.onclick    = () => openPage(secFitur);
+  btnTutorial.onclick = () => openPage(secTutorial);
+  btnKonsep.onclick   = () => openPage(secKonsep);
+  btnAnalisis.onclick = () => openPage(secAnalisis);
+
+  btnHome.onclick = () => {
+    pages.classList.add("hidden");
+    landing.classList.remove("hidden");
+    allSections.forEach(sec => sec.classList.add("hidden"));
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // ====== ELEMEN UI ANALISIS ======
+  const statusEl      = document.getElementById("status");
+  const detailsEl     = document.getElementById("details");
+  const tableBody     = document.getElementById("history-table");
+  const downloadBtn   = document.getElementById("download-btn");
+  const searchInput   = document.getElementById("search-input");
+  const searchBtn     = document.getElementById("search-btn");
+  const searchResults = document.getElementById("search-results");
+  const searchStatus  = document.getElementById("search-status");
+  const locBtn        = document.getElementById("loc-btn");
+
+  const history = [];
+
+  // ====== GRAFIK CHART.JS ======
+  const ctx = document.getElementById("speed-chart").getContext("2d");
+  const speedChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: [],
+      datasets: [{
+        label: "Kecepatan (km/jam)",
+        data: [],
+        tension: 0.25,
+        pointRadius: 3,
+        borderWidth: 2,
+        borderColor: "#38bdf8",
+        backgroundColor: "rgba(56,189,248,0.15)"
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { labels: { color: "#e5e7eb" } },
+        tooltip: {
+          callbacks: {
+            // tooltip menampilkan v, dv/dt, dan status
+            label: function (context) {
+              const idx = context.dataIndex;
+              const row = history[idx];
+              if (!row) {
+                return `Kecepatan: ${context.parsed.y} km/jam`;
+              }
+              const lines = [];
+              lines.push(`Kecepatan: ${row.v} km/jam`);
+              lines.push(`dv/dt: ${row.dvdt} km/jam per menit`);
+              lines.push(`Status: ${row.label}`);
+              return lines;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: "#9ca3af" },
+          title: { display: true, text: "Waktu", color: "#e5e7eb" }
+        },
+        y: {
+          ticks: { color: "#9ca3af" },
+          title: { display: true, text: "Kecepatan (km/jam)", color: "#e5e7eb" }
+        }
+      }
+    }
+  });
+
+  // ====== PETA TOMTOM ======
+  const map = tt.map({
+    key: API_KEY,
+    container: "map",
+    center: [106.816, -6.2],
+    zoom: 12
+  });
+  map.addControl(new tt.NavigationControl());
+
+  let marker = null;
+
+  function createLocationMarker() {
+    const el = document.createElement("div");
+    el.className = "marker-location";
+    return el;
   }
 
-  .nav {
-    gap: 4px;
+  function resetData() {
+    if (sampling) {
+      clearInterval(sampling);
+      sampling = null;
+    }
+    previous = null;
+    history.length = 0;
+    tableBody.innerHTML = "";
+    speedChart.data.labels = [];
+    speedChart.data.datasets[0].data = [];
+    speedChart.update();
+    statusEl.textContent = "-";
+    statusEl.className = "badge";
+    detailsEl.textContent = "";
   }
 
-  .nav-link {
-    font-size: 0.8rem;
-    padding-inline: 8px;
+  function setPoint(lat, lon) {
+    resetData();
+    if (marker) marker.remove();
+    marker = new tt.Marker({ element: createLocationMarker() })
+      .setLngLat([lon, lat])
+      .addTo(map);
+
+    fetchTraffic(lat, lon);
+    sampling = setInterval(() => fetchTraffic(lat, lon), 10000);
   }
 
-  .topbar {
-    padding-inline: 10px;
+  map.on("click", e => {
+    setPoint(e.lngLat.lat, e.lngLat.lng);
+  });
+
+  // ====== PENCARIAN LOKASI ======
+  searchBtn.onclick = async () => {
+    const q = searchInput.value.trim();
+    if (!q) return;
+
+    searchResults.innerHTML = "";
+    searchStatus.textContent = "Mencari...";
+
+    try {
+      const res = await fetch(
+        `https://api.tomtom.com/search/2/search/${encodeURIComponent(q)}.json?key=${API_KEY}`
+      );
+      const data = await res.json();
+      if (!data.results || !data.results.length) {
+        searchStatus.textContent = "Lokasi tidak ditemukan.";
+        return;
+      }
+
+      searchStatus.textContent = "Pilih lokasi:";
+      data.results.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item.address.freeformAddress;
+        li.onclick = () => {
+          map.flyTo({ center: [item.position.lon, item.position.lat], zoom: 15 });
+          setPoint(item.position.lat, item.position.lon);
+        };
+        searchResults.appendChild(li);
+      });
+    } catch (err) {
+      console.error(err);
+      searchStatus.textContent = "Terjadi kesalahan saat memanggil Search API.";
+    }
+  };
+
+  // ====== TRACKING LOKASI SAAT INI ======
+  locBtn.onclick = () => {
+    if (!navigator.geolocation) {
+      alert("Browser ini tidak mendukung geolocation.");
+      return;
+    }
+    searchStatus.textContent = "Mengambil lokasi saat ini...";
+    navigator.geolocation.getCurrentPosition(
+      pos => {
+        const lat = pos.coords.latitude;
+        const lon = pos.coords.longitude;
+        map.flyTo({ center: [lon, lat], zoom: 15 });
+        setPoint(lat, lon);
+        searchStatus.textContent = "Lokasi saat ini digunakan.";
+      },
+      err => {
+        console.error(err);
+        searchStatus.textContent =
+          "Gagal mengambil lokasi. Pastikan izin lokasi diaktifkan.";
+      }
+    );
+  };
+
+  // ====== AMBIL DATA TRAFIK + TURUNAN ======
+  function fetchTraffic(lat, lon) {
+    const url =
+      "https://api.tomtom.com/traffic/services/4/flowSegmentData/relative0/10/json" +
+      `?key=${API_KEY}&point=${lat},${lon}&unit=KMPH`;
+
+    fetch(url)
+      .then(r => r.json())
+      .then(data => {
+        const seg = data.flowSegmentData;
+        const v   = seg.currentSpeed;
+        const vf  = seg.freeFlowSpeed;
+        const ratio = v / vf;
+
+        let label, cls, borderColor, bgColor;
+
+        if (ratio >= 0.8) {
+          label = "LANCAR";
+          cls   = "badge lancar";
+          borderColor = "#22c55e";
+          bgColor     = "rgba(34,197,94,0.18)";
+        } else if (ratio >= 0.5) {
+          label = "PADAT";
+          cls   = "badge padat";
+          borderColor = "#facc15";
+          bgColor     = "rgba(250,204,21,0.18)";
+        } else {
+          label = "MACET";
+          cls   = "badge macet";
+          borderColor = "#f97373";
+          bgColor     = "rgba(248,113,113,0.18)";
+        }
+
+        // turunan numerik dv/dt
+        let dvdt = "-";
+        const now = Date.now();
+        if (previous) {
+          const dtMinutes = (now - previous.t) / 60000;
+          if (dtMinutes > 0) {
+            dvdt = ((v - previous.v) / dtMinutes).toFixed(2);
+          }
+        }
+        previous = { t: now, v };
+
+        statusEl.textContent = label;
+        statusEl.className   = cls;
+        detailsEl.textContent =
+          `Kecepatan: ${v} km/jam\n` +
+          `Kecepatan bebas (v_free): ${vf} km/jam\n` +
+          `dv/dt: ${dvdt} (km/jam per menit)`;
+
+        // simpan untuk tabel dan tooltip grafik
+        history.push({
+          time: new Date(now),
+          v,
+          label,
+          dvdt
+        });
+        renderTable();
+
+        // sinkronkan warna grafik dengan kepadatan
+        speedChart.data.datasets[0].borderColor     = borderColor;
+        speedChart.data.datasets[0].backgroundColor = bgColor;
+        addPointToChart(v);
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
-}
+
+  function renderTable() {
+    tableBody.innerHTML = "";
+    history.forEach((row, i) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML =
+        `<td>${i + 1}</td>` +
+        `<td>${row.time.toLocaleTimeString()}</td>` +
+        `<td>${row.v}</td>` +
+        `<td>${row.label}</td>` +
+        `<td>${row.dvdt}</td>`;
+      tableBody.appendChild(tr);
+    });
+  }
+
+  // ====== UNDUH CSV ======
+  downloadBtn.onclick = () => {
+    if (!history.length) {
+      alert("Belum ada data untuk diunduh.");
+      return;
+    }
+    let csv = "No,Waktu,v,Status,dv/dt\n";
+    history.forEach((row, i) => {
+      csv += `${i + 1},${row.time.toISOString()},${row.v},${row.label},${row.dvdt}\n`;
+    });
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement("a");
+    a.href = url;
+    a.download = "data_keramaian.csv";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  function addPointToChart(v) {
+    speedChart.data.labels.push(new Date().toLocaleTimeString());
+    speedChart.data.datasets[0].data.push(v);
+    speedChart.update();
+  }
+};
