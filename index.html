@@ -1,272 +1,248 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Traffic Lab</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Traffic Lab – Analisis Keramaian Lalu Lintas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TomTom -->
+  <link rel="stylesheet" href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.0/maps/maps.css">
+  <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.0/maps/maps-web.min.js"></script>
+  <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.0/services/services-web.min.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">
-  <div class="logo">Traffic<span> Lab</div>
-  <nav class="nav">
-    <button class="nav-link" data-goto="landing">Beranda</button>
-    <button class="nav-link" data-goto="fitur">Fitur</button>
-    <button class="nav-link" data-goto="konsep">Konsep Turunan</button>
-    <button class="nav-link" data-goto="tutorial">Tutorial</button>
-  </nav>
-</header>
 
-<main>
-  <!-- ========== LANDING ========== -->
-  <section id="landing" class="page-section active">
-    <div class="landing-wrap">
-      <div class="landing-text">
-        <p class="tagline">Mini Riset Kalkulus • Kepadatan Lalu Lintas</p>
+<!-- ====== TAMPILAN AWAL / MENU ====== -->
+<section id="landing">
+  <!-- Bar logo -->
+  <div class="landing-bar">
+    <div class="landing-logo">Traffic <span>Lab</span></div>
+  </div>
+
+  <div class="landing-main">
+    <!-- header: tagline + judul -->
+    <div class="landing-header">
+      <div class="landing-tagline">
+        MINI RISET KALKULUS • KEPADATAN LALU LINTAS
+      </div>
+      <div class="landing-title-box">
         <h1>Selamat datang di <span>Traffic Lab</span></h1>
-        <p class="subtitle">
-          Website ini membantu menganalisis kepadatan lalu lintas berdasarkan data
-          hasil pengamatan dan konsep turunan numerik.
-        </p>
-      </div>
-
-      <div class="mode-buttons">
-        <div class="mode-card">
-          <h2>Mode Peneliti</h2>
-          <p>Masukkan data observasi dan hitung tabel per interval.</p>
-          <button id="btn-open-researcher" class="primary">Butuh password</button>
-        </div>
-        <div class="mode-card">
-          <h2>Mode Pengguna</h2>
-          <p>Lihat ringkasan jam sepi, normal, dan ramai dari data terbaru.</p>
-          <button id="btn-open-user" class="secondary">Tanpa login</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== MODE PENELITI ========== -->
-  <section id="researcher" class="page-section">
-    <h2 class="section-title">Mode Peneliti</h2>
-    <p class="section-subtitle">
-      Masukkan data jumlah kendaraan per interval. Hasilnya otomatis dihitung dan
-      disimpan sebagai draft.
-    </p>
-
-    <div class="grid-2">
-      <div class="card">
-        <h3>Info Observasi</h3>
-        <label>Nama lokasi / simpang
-          <input type="text" id="obs-location" placeholder="Misal: Simpang Lonsum" />
-        </label>
-        <label>Nama pengamat
-          <input type="text" id="obs-observer" placeholder="Nama kamu" />
-        </label>
-        <label>Tanggal observasi
-          <input type="date" id="obs-date" />
-        </label>
-      </div>
-
-      <div class="card">
-        <h3>Pengaturan Interval</h3>
-        <label>Waktu mulai (HH:MM)
-          <input type="time" id="interval-start" value="06:00" />
-        </label>
-        <label>Panjang interval (menit)
-          <input type="number" id="interval-minutes" value="15" min="1" />
-        </label>
-        <label>Jumlah interval
-          <input type="number" id="interval-count" value="8" min="1" max="30" />
-        </label>
-        <button id="btn-make-intervals" class="primary full">Buat input interval</button>
       </div>
     </div>
 
-    <div class="card">
-      <h3>Input Jumlah Kendaraan per Interval</h3>
-      <p class="hint">
-        Setelah menekan "Buat input interval", kolom input akan muncul di sini.
-      </p>
-      <div id="interval-inputs" class="interval-grid"></div>
-      <div class="actions-right">
-        <button id="btn-calc-save" class="primary">Hitung turunan &amp; simpan draft</button>
-      </div>
-      <p id="researcher-status" class="status-text"></p>
-    </div>
-
-    <div class="card">
-      <h3>Detail Per Interval (draft terakhir dihitung)</h3>
-      <div class="table-wrapper">
-        <table id="detail-table">
-          <thead>
-            <tr>
-              <th>t</th>
-              <th>Waktu</th>
-              <th>f(t) (kendaraan)</th>
-              <th>f’(t)</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Draft Data Tersimpan</h3>
-      <p class="hint">
-        Setiap kali menghitung, 1 draft baru disimpan. Pilih draft yang ingin dipakai di Mode Pengguna 
-        atau hapus jika tidak diperlukan.
-      </p>
-      <div class="table-wrapper">
-        <table id="draft-table">
-          <thead>
-            <tr>
-              <th>Nama lokasi</th>
-              <th>Pengamat</th>
-              <th>Tanggal</th>
-              <th>Interval</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== MODE PENGGUNA ========== -->
-  <section id="user" class="page-section">
-    <h2 class="section-title">Mode Pengguna</h2>
-    <p class="section-subtitle">
-      Pilih data pengamatan yang tersedia, lalu lihat ringkasan, grafik kepadatan,
-      dan keterangan kemacetan.
-    </p>
-
-    <div class="card">
-      <h3>Pilih Data</h3>
-      <label>Draft data
-        <select id="user-draft-select">
-          <option value="">Belum ada data yang dipilih</option>
-        </select>
-      </label>
-    </div>
-
-    <div class="card" id="user-summary-card">
-      <h3>Ringkasan Data</h3>
-      <p id="user-summary-empty" class="hint">
-        Belum ada data yang dipilih. Pilih draft pada daftar di atas atau dari Mode Peneliti.
-      </p>
-      <div id="user-summary-content" class="summary-grid hidden">
-        <p><strong>Lokasi:</strong> <span id="sum-location"></span></p>
-        <p><strong>Pengamat:</strong> <span id="sum-observer"></span></p>
-        <p><strong>Tanggal:</strong> <span id="sum-date"></span></p>
-        <p><strong>Interval:</strong> <span id="sum-interval"></span></p>
-        <p><strong>Interval tersibuk:</strong> <span id="sum-busy"></span></p>
-        <p><strong>Interval tersepi:</strong> <span id="sum-quiet"></span></p>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Grafik Kepadatan per Interval</h3>
-      <p class="hint">
-        Titik warna hijau = sepi, biru = normal, merah = ramai. Garis menunjukkan
-        perubahan jumlah kendaraan terhadap waktu.
-      </p>
-      <div class="chart-wrapper">
-        <canvas id="traffic-chart"></canvas>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Keterangan Kemacetan</h3>
-      <div id="user-keterangan">
-        <p class="hint">
-          Informasi singkat tentang kondisi jalan akan muncul di sini setelah data dipilih.
-        </p>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Tabel Ringkasan Interval</h3>
-      <div class="table-wrapper">
-        <table id="user-table">
-          <thead>
-            <tr>
-              <th>t</th>
-              <th>Waktu</th>
-              <th>f(t)</th>
-              <th>f’(t)</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FITUR / KONSEP / TUTORIAL ========== -->
-  <section id="fitur" class="page-section">
-    <h2 class="section-title">Fitur Utama</h2>
-    <div class="grid-3">
-      <div class="card">
-        <h3>Input Observasi</h3>
-        <p>Mencatat nama jalan, pengamat, dan tanggal observasi.</p>
-      </div>
-      <div class="card">
-        <h3>Turunan Numerik</h3>
-        <p>
-          Menghitung laju perubahan jumlah kendaraan dengan pendekatan forward,
-          backward, dan central difference.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Draft &amp; Publikasi</h3>
-        <p>
-          Menyimpan beberapa draft sekaligus dan memilih mana yang ingin
-          ditampilkan kepada pengguna.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="konsep" class="page-section">
-    <h2 class="section-title">Konsep Turunan yang Dipakai</h2>
-    <div class="card">
+    <!-- deskripsi -->
+    <div class="landing-desc-box">
       <p>
-        Misalkan f(t) menyatakan jumlah kendaraan pada interval ke-t. Turunan f’(t) menyatakan
-        <em>laju perubahan</em> jumlah kendaraan terhadap waktu.
-      </p>
-      <ul>
-        <li>Forward: f’(0) ≈ f(1) – f(0)</li>
-        <li>Backward: f’(n) ≈ f(n) – f(n-1)</li>
-        <li>Central: f’(t) ≈ (f(t+1) – f(t-1)) / 2 untuk 0 &lt; t &lt; n</li>
-      </ul>
-      <p>
-        Dari nilai f’(t), kita dapat melihat kapan kepadatan kendaraan naik cepat,
-        stabil, atau menurun.
+        Website ini membantu menganalisis kepadatan lalu lintas berdasarkan
+        data <b>TomTom Traffic</b> dan konsep <b>turunan numerik</b>.
+        Kamu bisa melihat kondisi jalan secara real-time dan menggunakannya
+        sebagai bahan mini riset.
       </p>
     </div>
-  </section>
 
-  <section id="tutorial" class="page-section">
-    <h2 class="section-title">Tutorial Singkat</h2>
-    <div class="card">
-      <ol>
-        <li>Dari halaman awal, pilih <strong>Mode Peneliti</strong> dan masukkan password.</li>
-        <li>Isi info observasi dan atur interval waktu, lalu klik <strong>Buat input interval</strong>.</li>
-        <li>Isi jumlah kendaraan di setiap interval, lalu klik <strong>Hitung turunan &amp; simpan draft</strong>.</li>
-        <li>Draft baru akan muncul di tabel draft. Pilih salah satu draft untuk digunakan di Mode Pengguna.</li>
-        <li>Buka <strong>Mode Pengguna</strong>, pilih draft, lalu lihat ringkasan, grafik, dan keterangan kemacetan.</li>
+    <!-- tombol menu 4 kotak -->
+    <div class="landing-buttons">
+      <button id="btn-fitur" class="menu-btn">Fitur</button>
+      <button id="btn-tutorial" class="menu-btn">Tutorial</button>
+      <button id="btn-konsep" class="menu-btn">Konsep Turunan</button>
+      <button id="btn-analisis" class="menu-btn">Analisis</button>
+    </div>
+  </div>
+</section>
+
+<!-- ====== HALAMAN KONTEN (HANYA SATU YANG TAMPIL, LANDING HILANG) ====== -->
+<div id="pages" class="hidden">
+  <header class="page-bar">
+    <div class="landing-logo">Traffic <span>Lab</span></div>
+    <button id="btn-home" class="btn-home">Kembali ke tampilan awal</button>
+  </header>
+
+  <main id="content">
+    <!-- FITUR -->
+    <section id="sec-fitur" class="content-section hidden">
+      <h2>Fitur Utama Traffic Lab</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Peta Interaktif</h3>
+          <p>Pilih titik jalan di peta atau cari lokasi berdasarkan nama tempat/jalan.</p>
+        </div>
+        <div class="card">
+          <h3>Status Kepadatan Berwarna</h3>
+          <p>Hijau (lancar), kuning (padat), merah (macet) untuk interpretasi cepat.</p>
+        </div>
+        <div class="card">
+          <h3>Turunan Kecepatan</h3>
+          <p>Turunan numerik dv/dt menunjukkan arah perubahan kondisi lalu lintas.</p>
+        </div>
+        <div class="card">
+          <h3>Riwayat & Grafik</h3>
+          <p>Pengamatan disimpan dalam tabel dan grafik sebagai pendekatan fungsi v(t).</p>
+        </div>
+        <div class="card">
+          <h3>Tracking Lokasi Saat Ini</h3>
+          <p>Gunakan tombol “Lokasi Saya” untuk fokus pada posisimu sekarang.</p>
+        </div>
+        <div class="card">
+          <h3>Ekspor Data</h3>
+          <p>Unduh data dalam format CSV untuk keperluan laporan mini riset.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TUTORIAL -->
+    <section id="sec-tutorial" class="content-section hidden">
+      <h2>Tutorial Pemakaian</h2>
+      <ol class="steps">
+        <li>Pilih menu <b>Analisis</b> pada tampilan awal.</li>
+        <li>Pilih lokasi dengan:
+          <ul>
+            <li>Mengetik nama tempat/jalan dan klik salah satu hasil, atau</li>
+            <li>Langsung klik titik di peta.</li>
+          </ul>
+        </li>
+        <li>Atau tekan <b>Lokasi Saya</b> untuk memakai posisimu sekarang.</li>
+        <li>Sistem otomatis mengambil data kecepatan berkala dan menghitung turunan dv/dt.</li>
+        <li>Lihat status kepadatan, grafik kecepatan, dan unduh CSV untuk laporan.</li>
       </ol>
-    </div>
-  </section>
-</main>
+    </section>
+
+    <!-- KONSEP TURUNAN -->
+    <section id="sec-konsep" class="content-section hidden">
+      <h2>Konsep Turunan dalam Analisis Keramaian</h2>
+      <div class="two-cols">
+        <div>
+          <h3>1. Rasio Kecepatan (Intensitas Saat Ini)</h3>
+          <p>
+            Tingkat keramaian dasar ditentukan dari perbandingan kecepatan saat ini
+            <code>v</code> dan kecepatan bebas <code>v<sub>free</sub></code>:
+          </p>
+          <div class="formula">
+            <span>R = </span>
+            <span class="frac">
+              <span class="top">v</span>
+              <span class="bottom">v<sub>free</sub></span>
+            </span>
+          </div>
+
+          <p>Keterangan variabel:</p>
+          <ul>
+            <li><b>R</b> : rasio kecepatan (tanpa satuan)</li>
+            <li><b>v</b> : kecepatan saat ini (km/jam)</li>
+            <li><b>v<sub>free</sub></b> : kecepatan bebas, yaitu kecepatan saat jalan sangat lancar (km/jam)</li>
+          </ul>
+
+          <p>Klasifikasi:</p>
+          <ul>
+            <li>R ≥ 0,8 → <span class="pill pill-green">LANCAR</span></li>
+            <li>0,5 ≤ R &lt; 0,8 → <span class="pill pill-yellow">PADAT</span></li>
+            <li>R &lt; 0,5 → <span class="pill pill-red">MACET</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>2. Turunan Numerik Kecepatan</h3>
+          <p>Perubahan kecepatan terhadap waktu di titik yang sama dihampiri dengan:</p>
+
+          <div class="formula">
+            <span>v′(t) ≈ </span>
+            <span class="frac">
+              <span class="top">v₂ − v₁</span>
+              <span class="bottom">Δt</span>
+            </span>
+          </div>
+
+          <p>Keterangan variabel:</p>
+          <ul>
+            <li><b>v₁</b> : kecepatan pada waktu pengamatan pertama (km/jam)</li>
+            <li><b>v₂</b> : kecepatan pada waktu pengamatan kedua (km/jam)</li>
+            <li><b>Δt</b> : selisih waktu pengamatan (menit)</li>
+            <li><b>v′(t)</b> : turunan kecepatan (perubahan kecepatan per menit)</li>
+          </ul>
+
+          <p>Interpretasi sederhana:</p>
+          <ul>
+            <li>v′(t) &lt; 0 → kemacetan cenderung meningkat</li>
+            <li>v′(t) ≈ 0 → kondisi relatif stabil</li>
+            <li>v′(t) &gt; 0 → lalu lintas cenderung membaik</li>
+          </ul>
+
+          <p>
+            Grafik kecepatan v(t) di menu Analisis dapat dianggap sebagai
+            pendekatan fungsi, sedangkan v′(t) (dv/dt) berkaitan dengan
+            kemiringan grafik tersebut.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANALISIS (PETA + GRAFIK) -->
+    <section id="sec-analisis" class="content-section hidden">
+      <h2>Analisis Keramaian Lalu Lintas</h2>
+      <p class="section-sub">
+        Pilih titik di peta, gunakan fitur pencarian, atau klik tombol
+        <b>Lokasi Saya</b>. Sistem akan membaca data kecepatan dari TomTom
+        Traffic dan menghitung turunan dv/dt.
+      </p>
+
+      <div class="app">
+        <aside class="panel-dark">
+          <div class="box-dark">
+            <h3>Cari Lokasi</h3>
+            <div class="search">
+              <input id="search-input" placeholder="UNIMED, Plaza Medan Fair..." />
+              <button id="search-btn" class="btn small">Cari</button>
+            </div>
+            <button id="loc-btn" class="btn small ghost">Gunakan Lokasi Saya</button>
+            <p id="search-status" class="muted"></p>
+
+            <div class="search-results-box">
+              <ul id="search-results"></ul>
+            </div>
+          </div>
+
+          <div class="box-dark">
+            <h3>Status Kepadatan</h3>
+            <span id="status" class="badge">-</span>
+            <pre id="details"></pre>
+          </div>
+
+          <div class="box-dark">
+            <h3>Riwayat Pengamatan</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th><th>Waktu</th><th>v</th><th>Status</th><th>dv/dt</th>
+                  </tr>
+                </thead>
+                <tbody id="history-table"></tbody>
+              </table>
+            </div>
+            <button id="download-btn" class="btn small">Unduh CSV</button>
+          </div>
+        </aside>
+
+        <main class="main">
+          <div id="map"></div>
+          <div class="chart-box box-dark">
+            <h3>Grafik Kecepatan (v(t))</h3>
+            <canvas id="speed-chart"></canvas>
+          </div>
+        </main>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Traffic Lab – Mini riset analisis keramaian berbasis turunan.</p>
+  </footer>
+</div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
